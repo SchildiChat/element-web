@@ -74,7 +74,7 @@ export class ListLayout {
 
     public get defaultVisibleTiles(): number {
         // This number is what "feels right", and mostly subject to design's opinion.
-        return 8;
+        return 50;
     }
 
     public tilesWithPadding(n: number, paddingPx: number): number {
