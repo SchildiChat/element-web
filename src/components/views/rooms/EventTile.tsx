@@ -683,6 +683,12 @@ export class UnwrappedEventTile extends React.Component<EventTileProps, IState> 
             return false;
         }
 
+        // don't show highlights in 1:1 rooms
+        const room = cli.getRoom(this.props.mxEvent.getRoomId());
+        if (room && room.currentState.getJoinedMemberCount() === 2) {
+            return false;
+        }
+
         return !!(actions?.tweaks.highlight || previousActions?.tweaks.highlight);
     }
 
