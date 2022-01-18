@@ -159,8 +159,10 @@ export class Algorithm extends EventEmitter {
         this.recalculateActiveCallRooms(tagId);
     }
 
-    private updateStickyRoom(val: Room | null): void {
-        this.doUpdateStickyRoom(val);
+    private updateStickyRoom(val: Room) {
+        // Schildi: we don't want it sticky
+        this.doUpdateStickyRoom(null);
+        //this.doUpdateStickyRoom(val);
         this._lastStickyRoom = null; // clear to indicate we're done changing
     }
 
