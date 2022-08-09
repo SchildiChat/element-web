@@ -137,6 +137,7 @@ export class BreadcrumbsStore extends AsyncStoreWithClient<IState> {
     }
 
     private async appendRoom(room: Room): Promise<void> {
+        if (room.isSpaceRoom()) return;
         let updated = false;
         const rooms = (this.state.rooms || []).slice(); // cheap clone
         const msc3946ProcessDynamicPredecessor = SettingsStore.getValue("feature_dynamic_room_predecessors");
