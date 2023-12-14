@@ -63,10 +63,12 @@ const PREVIEWS: Record<
         isState: false,
         previewer: new StickerEventPreview(),
     },
+    /*
     "m.reaction": {
         isState: false,
         previewer: new ReactionEventPreview(),
     },
+    */
     [M_POLL_START.name]: {
         isState: false,
         previewer: new PollStartEventPreview(),
