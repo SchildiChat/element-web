@@ -75,6 +75,7 @@ export class Algorithm extends EventEmitter {
      * Set to true to suspend emissions of algorithm updates.
      */
     public updatesInhibited = false;
+    private unifiedRoomList: boolean = true;
 
     public start(): void {
         CallStore.instance.on(CallStoreEvent.ConnectedCalls, this.onConnectedCalls);
@@ -104,6 +105,10 @@ export class Algorithm extends EventEmitter {
         // the sticky room cache. If it ends up returning the sticky room cache, we end up
         // corrupting our caches and confusing them.
         return this._cachedRooms;
+    }
+
+    public setUnifiedRoomList(unifiedRoomList: boolean): void {
+        this.unifiedRoomList = unifiedRoomList;
     }
 
     /**
@@ -513,7 +518,10 @@ export class Algorithm extends EventEmitter {
             }
 
             if (!inTag) {
-                if (DMRoomMap.shared().getUserIdForRoomId(room.roomId)) {
+                if (this.unifiedRoomList) {
+                    // SC: Unified room list for DMs and groups
+                    newTags[DefaultTagID.Unified].push(room);
+                } else if (DMRoomMap.shared().getUserIdForRoomId(room.roomId)) {
                     newTags[DefaultTagID.DM].push(room);
                 } else {
                     newTags[DefaultTagID.Untagged].push(room);
@@ -557,7 +565,13 @@ export class Algorithm extends EventEmitter {
             tags.push(...this.getTagsOfJoinedRoom(room));
         }
 
-        if (!tags.length) tags.push(DefaultTagID.Untagged);
+        if (!tags.length) {
+            if (this.unifiedRoomList) {
+                tags.push(DefaultTagID.Unified);
+            } else {
+                tags.push(DefaultTagID.Untagged);
+            }
+        }
 
         return tags;
     }
@@ -567,7 +581,7 @@ export class Algorithm extends EventEmitter {
 
         if (tags.length === 0) {
             // Check to see if it's a DM if it isn't anything else
-            if (DMRoomMap.shared().getUserIdForRoomId(room.roomId)) {
+            if (DMRoomMap.shared().getUserIdForRoomId(room.roomId) && !this.unifiedRoomList) {
                 tags = [DefaultTagID.DM];
             }
         }
