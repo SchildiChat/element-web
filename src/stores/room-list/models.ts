@@ -13,6 +13,7 @@ export enum DefaultTagID {
     LowPriority = "m.lowpriority",
     Favourite = "m.favourite",
     DM = "im.vector.fake.direct",
+    Unified = "chat.schildi.fake.unified",
     Conference = "im.vector.fake.conferences",
     ServerNotice = "m.server_notice",
     Suggested = "im.vector.fake.suggested",
@@ -21,6 +22,7 @@ export enum DefaultTagID {
 export const OrderedDefaultTagIDs = [
     DefaultTagID.Invite,
     DefaultTagID.Favourite,
+    DefaultTagID.Unified,
     DefaultTagID.DM,
     DefaultTagID.Conference,
     DefaultTagID.Untagged,
