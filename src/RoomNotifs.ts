@@ -255,7 +255,7 @@ export function determineUnreadState(
         return { symbol: "!", count: 1, level: NotificationLevel.Highlight, invited: false };
     }
 
-    if (getRoomNotifsState(room.client, room.roomId) === RoomNotifState.Mute) {
+    if (false && getRoomNotifsState(room.client, room.roomId) === RoomNotifState.Mute) {
         return { symbol: null, count: 0, level: NotificationLevel.None, invited: false };
     }
 
