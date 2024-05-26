@@ -155,8 +155,16 @@ export class SpaceStoreClass extends AsyncStoreWithClient<EmptyObject> {
     private _msc3946ProcessDynamicPredecessor: boolean = SettingsStore.getValue("feature_dynamic_room_predecessors");
     private _storeReadyDeferred = defer();
 
+    // SC start
+    private _showSpaceDMBadges = true;
+    // SC end
+
     public constructor() {
         super(defaultDispatcher, {});
+
+        // SC start
+        SettingsStore.monitorSetting("Spaces.showSpaceDMBadges", null);
+        // SC end
 
         SettingsStore.monitorSetting("Spaces.allRoomsInHome", null);
         SettingsStore.monitorSetting("Spaces.enabledMetaSpaces", null);
@@ -213,6 +221,10 @@ export class SpaceStoreClass extends AsyncStoreWithClient<EmptyObject> {
 
     public get allRoomsInHome(): boolean {
         return this._allRoomsInHome;
+    }
+
+    public get showSpaceDMBadges(): boolean { // SC
+        return this._showSpaceDMBadges;
     }
 
     public setActiveRoomInSpace(space: SpaceKey): void {
@@ -723,6 +735,10 @@ export class SpaceStoreClass extends AsyncStoreWithClient<EmptyObject> {
                     }
 
                     if (room.isSpaceRoom() || !flattenedRoomsForSpace.has(room.roomId)) return false;
+
+                    if (this.showSpaceDMBadges) { // SC
+                        return true;
+                    }
 
                     if (dmBadgeSpace && DMRoomMap.shared().getUserIdForRoomId(room.roomId)) {
                         return s === dmBadgeSpace;
@@ -1297,6 +1313,15 @@ export class SpaceStoreClass extends AsyncStoreWithClient<EmptyObject> {
                                 this.rebuildHomeSpace();
                             }
                             this.sendUserProperties();
+                        }
+                        break;
+                    }
+
+                    case "Spaces.showSpaceDMBadges": { // SC
+                        const newValue = SettingsStore.getValue("Spaces.showSpaceDMBadges");
+                        if (this.showSpaceDMBadges !== newValue) {
+                            this._showSpaceDMBadges = newValue;
+                            this.rebuildSpaceHierarchy(); // rebuild everything
                         }
                         break;
                     }

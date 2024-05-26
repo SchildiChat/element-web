@@ -365,6 +365,11 @@ export const SETTINGS: Settings = {
         default: true,
         controller: new ReloadOnChangeController(),
     },
+    "Spaces.showSpaceDMBadges": {
+        displayName: _td("Show notification badges for People in Spaces"),
+        supportedLevels: LEVELS_ACCOUNT_SETTINGS,
+        default: true,
+    },
     // SC settings end
     "feature_video_rooms": {
         isFeature: true,
