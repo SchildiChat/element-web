@@ -126,6 +126,7 @@ class ReactionPicker extends React.Component<IProps, IState> {
     public render(): React.ReactNode {
         return (
             <EmojiPicker
+                allowUnlisted={true}
                 onChoose={this.onChoose}
                 isEmojiDisabled={this.isEmojiDisabled}
                 onFinished={this.props.onFinished}
