@@ -288,6 +288,7 @@ export class SpaceStoreClass extends AsyncStoreWithClient<EmptyObject> {
             // else if the last viewed room in this space is joined then view that
             // else view space home or home depending on what is being clicked on
             if (
+                SettingsStore.getValue("Spaces.returnToPreviouslyOpenedRoom") &&
                 roomId &&
                 cliSpace?.getMyMembership() !== KnownMembership.Invite &&
                 this.matrixClient.getRoom(roomId)?.getMyMembership() === KnownMembership.Join &&
