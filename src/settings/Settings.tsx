@@ -371,6 +371,12 @@ export const SETTINGS: Settings = {
         supportedLevels: LEVELS_ACCOUNT_SETTINGS,
         default: true,
     },
+    "Spaces.returnToPreviouslyOpenedRoom": {
+        displayName: _td("Return to the room previously opened in a space"),
+        description: _td("If disabled, the space overview will be shown when switching to another space."),
+        supportedLevels: LEVELS_ACCOUNT_SETTINGS,
+        default: false,
+    },
     // SC settings end
     "feature_video_rooms": {
         isFeature: true,
