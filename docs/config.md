@@ -30,7 +30,7 @@ One of the following options **must** be supplied:
     {
         "default_server_config": {
             "m.homeserver": {
-                "base_url": "https://matrix-client.matrix.org"
+                "base_url": "https://chat.livingutopia.org"
             },
             "m.identity_server": {
                 "base_url": "https://vector.im"
@@ -40,7 +40,7 @@ One of the following options **must** be supplied:
     ```
 2. `default_server_name`: A different method of connecting to the homeserver by looking up the connection information
    using `.well-known`. When using this option, simply use your server's domain name (the part at the end of user IDs):
-   `"default_server_name": "matrix.org"`
+   `"default_server_name": "chat.livingutopia.org"`
 3. <del>`default_hs_url` and (optionally) `default_is_url`</del>: A very deprecated method of defining the connection
    information. These are the same values seen as `base_url` in the `default_server_config` example, with `default_is_url`
    being optional.
