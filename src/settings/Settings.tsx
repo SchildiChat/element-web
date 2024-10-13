@@ -810,7 +810,7 @@ export const SETTINGS: Settings = {
     "alwaysShowTimestamps": {
         supportedLevels: LEVELS_ACCOUNT_SETTINGS,
         displayName: _td("settings|always_show_message_timestamps"),
-        default: false,
+        default: true,
     },
     "userTimezone": {
         supportedLevels: LEVELS_DEVICE_ONLY_SETTINGS,
