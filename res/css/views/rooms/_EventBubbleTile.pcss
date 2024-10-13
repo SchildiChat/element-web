@@ -283,6 +283,8 @@ Please see LICENSE files in the repository root for full details.
         margin-inline: var(--EventTile_bubble_line-margin-inline-start) var(--EventTile_bubble_line-margin-inline-end);
         border-top-left-radius: var(--cornerRadius);
         border-top-right-radius: var(--cornerRadius);
+        border-bottom-left-radius: var(--cornerRadius);
+        border-bottom-right-radius: var(--cornerRadius);
 
         /* the selector here is quite weird because timestamps can appear linked & unlinked and in different places */
         /* in the DOM depending on the specific rendering context */
@@ -376,7 +378,7 @@ Please see LICENSE files in the repository root for full details.
     }
 
     &.mx_EventTile_continuation[data-self="false"] .mx_EventTile_line {
-        border-top-left-radius: 0;
+        //border-top-left-radius: 0;
 
         .mx_MImageBody .mx_MImageBody_thumbnail_container,
         .mx_MVideoBody .mx_MVideoBody_container,
@@ -384,7 +386,7 @@ Please see LICENSE files in the repository root for full details.
         .mx_MediaBody,
         .mx_MLocationBody_map,
         .mx_MBeaconBody {
-            border-top-left-radius: 0;
+            //border-top-left-radius: 0;
         }
     }
     &.mx_EventTile_lastInSection[data-self="false"] .mx_EventTile_line {
@@ -401,7 +403,7 @@ Please see LICENSE files in the repository root for full details.
     }
 
     &.mx_EventTile_continuation[data-self="true"] .mx_EventTile_line {
-        border-top-right-radius: 0;
+        //border-top-right-radius: 0;
 
         .mx_MImageBody .mx_MImageBody_thumbnail_container,
         .mx_MVideoBody .mx_MVideoBody_container,
@@ -409,7 +411,7 @@ Please see LICENSE files in the repository root for full details.
         .mx_MediaBody,
         .mx_MLocationBody_map,
         .mx_MBeaconBody {
-            border-top-right-radius: 0;
+            //border-top-right-radius: 0;
         }
     }
     &.mx_EventTile_lastInSection[data-self="true"] .mx_EventTile_line {
