@@ -656,7 +656,7 @@ export const SETTINGS: Settings = {
         description: _td("labs|render_reaction_images_description"),
         supportedLevels: LEVELS_DEVICE_ONLY_SETTINGS_WITH_CONFIG_PRIORITISED,
         supportedLevelsAreOrdered: true,
-        default: false,
+        default: true,
     },
     "feature_new_room_list": {
         supportedLevels: LEVELS_DEVICE_ONLY_SETTINGS_WITH_CONFIG_PRIORITISED,
