@@ -1,5 +1,6 @@
 /*
 Copyright 2024 New Vector Ltd.
+Copyright 2024 Suguru Hirahara
 Copyright 2016 OpenMarket Ltd
 
 SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only
@@ -33,6 +34,20 @@ Please see LICENSE files in the repository root for full details.
         .mx_GenericEventListSummary_toggle {
             float: right;
             margin-inline: 0 10px;
+        }
+    }
+
+    &[data-layout="irc"] {
+        .mx_GenericEventListSummary_avatars {
+            vertical-align: text-bottom; /* Align with mx_GenericEventListSummary_summary */
+
+            > * {
+                line-height: inherit; /* Same size as avatar height */
+            }
+        }
+
+        .mx_GenericEventListSummary_summary {
+            line-height: var(--irc-line-height); /* Override the declaration by mx_TextualEvent */
         }
     }
 
