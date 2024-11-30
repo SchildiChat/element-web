@@ -1239,7 +1239,7 @@ export const SETTINGS: Settings = {
     },
     "Spaces.showPeopleInSpace": {
         supportedLevels: [SettingLevel.ROOM_ACCOUNT],
-        default: true,
+        default: false,
     },
     "developerMode": {
         displayName: _td("devtools|developer_mode"),
