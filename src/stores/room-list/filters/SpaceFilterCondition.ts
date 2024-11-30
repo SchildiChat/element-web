@@ -25,7 +25,7 @@ import SettingsStore from "../../../settings/SettingsStore";
 export class SpaceFilterCondition extends EventEmitter implements IFilterCondition, IDestroyable {
     private roomIds = new Set<string>();
     private userIds = new Set<string>();
-    private showPeopleInSpace = true;
+    private showPeopleInSpace = false;
     private space: SpaceKey = MetaSpace.Home;
 
     public isVisible(room: Room): boolean {
