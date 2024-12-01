@@ -34,8 +34,8 @@ export const ErrorView: React.FC<IProps> = ({ title, messages, footer, children 
             <img
                 className="mx_ErrorView_logo"
                 height="160"
-                src="themes/element/img/logos/element-app-logo.png"
-                alt="Element"
+                src="themes/element/img/logos/element-logo.svg"
+                alt="SchildiChat Logo"
             />
             <div className="mx_ErrorView_container">
                 <Heading size="md" weight="semibold">
