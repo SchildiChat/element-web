@@ -1,13 +1,13 @@
 {
-    "name": "Element",
-    "description": "A glossy Matrix collaboration client for the web.",
+    "name": "SchildiChat",
+    "description": "A feature-rich messenger for Matrix based on Element with some extras and tweaks.",
     "repository": {
-        "url": "https://github.com/element-hq/element-web",
+        "url": "https://github.com/SchildiChat/schildichat-desktop",
         "license": "AGPL-3.0-only OR GPL-3.0-only"
     },
     "bugs": {
-        "list": "https://github.com/element-hq/element-web/issues",
-        "report": "https://github.com/element-hq/element-web/issues/new/choose"
+        "list": "https://github.com/SchildiChat/schildichat-desktop/issues",
+        "report": "https://github.com/SchildiChat/schildichat-desktop/issues/new/choose"
     },
-    "keywords": ["chat", "riot", "matrix"]
+    "keywords": ["chat", "schildichat", "matrix"]
 }

@@ -645,7 +645,7 @@
         "stop_voice_message": "Stop recording",
         "voice_message_button": "Voice Message"
     },
-    "console_dev_note": "If you know what you're doing, Element is open-source, be sure to check out our GitHub (https://github.com/vector-im/element-web/) and contribute!",
+    "console_dev_note": "If you know what you're doing, SchildiChat is open-source, be sure to check out our GitHub (https://github.com/SchildiChat/schildichat-desktop/) and contribute!",
     "console_scam_warning": "If someone told you to copy/paste something here, there is a high likelihood you're being scammed!",
     "console_wait": "Wait!",
     "create_room": {
@@ -1039,11 +1039,11 @@
         "hs_blocked": "This homeserver has been blocked by its administrator.",
         "invalid_configuration_mixed_server": "Invalid configuration: a default_hs_url can't be specified along with default_server_name or default_server_config",
         "invalid_configuration_no_server": "Invalid configuration: no default server specified.",
-        "invalid_json": "Your Element configuration contains invalid JSON. Please correct the problem and reload the page.",
+        "invalid_json": "Your SchildiChat configuration contains invalid JSON. Please correct the problem and reload the page.",
         "invalid_json_detail": "The message from the parser is: %(message)s",
         "invalid_json_generic": "Invalid JSON",
         "mau": "This homeserver has hit its Monthly Active User limit.",
-        "misconfigured": "Your Element is misconfigured",
+        "misconfigured": "Your SchildiChat is misconfigured",
         "mixed_content": "Can't connect to homeserver via HTTP when an HTTPS URL is in your browser bar. Either use HTTPS or <a>enable unsafe scripts</a>.",
         "non_urgent_echo_failure_toast": "Your server isn't responding to some <a>requests</a>.",
         "resource_limits": "This homeserver has exceeded one of its resource limits.",
