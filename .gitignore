@@ -32,3 +32,5 @@ electron/pub
 /index.html
 # version file and tarball created by `npm pack` / `yarn pack`
 /git-revision.txt
+
+res/css/sc-*.css
